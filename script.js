@@ -3,7 +3,8 @@ const games = [
 		name: "Star Checkers",
 		url: "games/star-checkers/star-checkers.png",
 		type: "board",
-		description: "A simple game of Chinese Checkers",
+		description:
+			"be the first to move all 10 of your marbles from your starting triangle to the opposite corner",
 	},
 	{
 		name: "Gas Mask",

@@ -276,12 +276,19 @@ body {
 
 .game-area {
 	background-color: #111827;
-	height: 16rem;
+	height: 30rem;
 	border-radius: 0.5rem;
 	margin-bottom: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.game-area canvas {
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .loading-text {

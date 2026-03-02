@@ -420,7 +420,7 @@ function boardInit(radius) {
 
 // initialize game state
 function gameInit() {
-	setCanvasFixedSize(vec2(720, 720));
+	setCanvasMaxSize(vec2(720, 720));
 
 	board = boardInit(8);
 	currPlayer = PLAYERS.find((p) => p.turnOrder === 1);
