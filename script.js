@@ -86,23 +86,33 @@ function startGame() {
 
   score = 0;
   updateScore();
-  gameArea.innerHTML = `
-    <div style="text-align: center;">
-      <p style="font-size: 3rem;">🎮</p>
-      <p style="color: #22c55e; margin-bottom: 0.5rem;">Playing: ${currentGame.name}</p>
-      <p style="color: #facc15; font-size: 1.5rem;">Score: <span id="liveScore">0</span></p>
-      <p style="color: #6b7280; font-size: 0.875rem; margin-top: 1rem;">Click the button to earn points!</p>
-      <button id="clickBtn" class="click-btn">
-        +10 Points
-      </button>
-    </div>
-  `;
 
-  document.getElementById('clickBtn').addEventListener('click', () => {
-    score += 10;
-    updateScore();
-    document.getElementById('liveScore').textContent = score;
-  });
+  const htmlPath = currentGame.url.replace('.png', '.html');
+  
+  gameArea.innerHTML = '<p class="loading-text">Loading game...</p>';
+
+  fetch(htmlPath)
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const scripts = doc.querySelectorAll('script');
+      
+      gameArea.innerHTML = '';
+      
+      scripts.forEach(script => {
+        const newScript = document.createElement('script');
+        if (script.src) {
+          newScript.src = script.src;
+        } else {
+          newScript.textContent = script.textContent;
+        }
+        gameArea.appendChild(newScript);
+      });
+    })
+    .catch(err => {
+      gameArea.innerHTML = `<p class="loading-text">Error loading game: ${err.message}</p>`;
+    });
 }
 
 function stopGame() {
