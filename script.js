@@ -50,7 +50,7 @@ playGameBtn.addEventListener("click", startGame);
 function createProductElement(game) {
 	const productEl = document.createElement("div");
 
-	productEl.className = "item";
+	productEl.className = "item box";
 
 	productEl.innerHTML = `<div class="item-image">
   <img src="${game.url}" alt="${game.name}" />

@@ -5,9 +5,7 @@
 }
 
 body {
-	background-color: #1f2937;
-	color: white;
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family: "Roboto Mono", monospace;
 }
 
 .container {
@@ -17,8 +15,6 @@ body {
 }
 
 .navbar {
-	background-color: #111827;
-	padding: 1rem;
 	margin-bottom: 1.5rem;
 }
 
@@ -39,7 +35,6 @@ body {
 .logo {
 	font-size: 1.5rem;
 	font-weight: bold;
-	color: #facc15;
 }
 
 .search-wrapper {
@@ -49,17 +44,8 @@ body {
 
 .search-input {
 	width: 100%;
-	padding: 0.5rem 1rem 0.5rem 2.5rem;
-	border-radius: 9999px;
-	background-color: #374151;
-	color: white;
-	border: none;
-	transition: width 0.3s ease;
-}
-
-.search-input:focus {
-	outline: none;
-	width: 100%;
+	padding: 0.75rem;
+	border-radius: 0;
 }
 
 .search-wrapper svg {
@@ -77,27 +63,21 @@ body {
 	gap: 1rem;
 }
 
-#scoreDisplay {
-	color: #facc15;
-	font-weight: bold;
-}
-
 .btn {
-	padding: 0.5rem 1.5rem;
-	border-radius: 9999px;
+	padding: 0.75rem 1.5rem;
 	font-weight: bold;
-	border: none;
 	cursor: pointer;
-	transition: background-color 0.2s ease;
+	border: 2px solid #000;
+	box-shadow: 4px 4px 0 #000;
+	font-family: "Roboto Mono", monospace;
 }
 
 .btn-random {
-	background-color: #16a34a;
-	color: white;
+	background-color: #fff;
 }
 
 .btn-random:hover {
-	background-color: #15803d;
+	box-shadow: 6px 6px 0 #000;
 }
 
 .main-content {
@@ -120,7 +100,7 @@ body {
 
 @media (min-width: 768px) {
 	.sidebar {
-		max-width: 10rem;
+		max-width: 12rem;
 	}
 }
 
@@ -140,11 +120,15 @@ body {
 
 #filters-container div {
 	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
-#filters-container label {
-	margin-left: 0.5rem;
-	cursor: pointer;
+#filters-container input[type="checkbox"] {
+	margin-bottom: 0;
+	margin-right: 0.5rem;
+	width: auto;
 }
 
 .products-grid {
@@ -181,8 +165,13 @@ body {
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
-	border: 1px solid #e5e7eb;
+	border: 2px solid #000;
+	box-shadow: 4px 4px 0 #000;
 	aspect-ratio: 1;
+}
+
+.item-image:hover {
+	box-shadow: 6px 6px 0 #000;
 }
 
 .item-image img {
@@ -202,29 +191,11 @@ body {
 	transition: transform 0.3s ease;
 	color: white;
 	font-weight: bold;
+	background-color: #000;
 }
 
 .item-image:hover .item-status {
 	transform: translateY(0);
-}
-
-.item-status.action {
-	background-color: #dc2626;
-}
-.item-status.rpg {
-	background-color: #9333ea;
-}
-.item-status.puzzle {
-	background-color: #2563eb;
-}
-.item-status.sports {
-	background-color: #16a34a;
-}
-.item-status.adventure {
-	background-color: #ca8a04;
-}
-.item-status.board {
-	background-color: #0891b2;
 }
 
 .item h3 {
@@ -232,7 +203,7 @@ body {
 }
 
 .item small {
-	color: #9ca3af;
+	color: #666;
 	text-transform: uppercase;
 }
 
@@ -242,7 +213,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.5);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -258,32 +229,31 @@ body {
 }
 
 .modal-content {
-	background-color: #1f2937;
 	padding: 2rem;
-	border-radius: 0.75rem;
 	max-width: 42rem;
 	width: 100%;
 	margin: 1rem;
 	text-align: center;
+	border: 2px solid #000;
+	box-shadow: 8px 8px 0 #000;
 }
 
 .modal-content h2 {
 	font-size: 1.875rem;
 	font-weight: bold;
-	color: #facc15;
 	margin-bottom: 1rem;
 }
 
 .game-area {
-	background-color: #111827;
+	background-color: #fff;
 	height: 30rem;
-	border-radius: 0.5rem;
 	margin-bottom: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
 	position: relative;
+	border: 2px solid #000;
 }
 
 .game-area canvas {
@@ -292,11 +262,10 @@ body {
 }
 
 .loading-text {
-	color: #9ca3af;
+	color: #666;
 }
 
 #gameDescription {
-	color: #d1d5db;
 	margin-bottom: 1rem;
 }
 
@@ -307,35 +276,32 @@ body {
 }
 
 .btn-play {
-	background-color: #16a34a;
-	color: white;
+	background-color: #fff;
 }
 
 .btn-play:hover {
-	background-color: #15803d;
+	box-shadow: 6px 6px 0 #000;
 }
 
 .btn-close {
-	background-color: #4b5563;
-	color: white;
+	background-color: #fff;
 }
 
 .btn-close:hover {
-	background-color: #374151;
+	box-shadow: 6px 6px 0 #000;
 }
 
 .click-btn {
 	margin-top: 1rem;
 	padding: 0.75rem 1.5rem;
-	border-radius: 9999px;
 	font-weight: bold;
-	background-color: #ca8a04;
-	color: white;
-	border: none;
+	background-color: #fff;
+	color: #000;
+	border: 2px solid #000;
+	box-shadow: 4px 4px 0 #000;
 	cursor: pointer;
-	transition: background-color 0.2s ease;
 }
 
 .click-btn:hover {
-	background-color: #a16207;
+	box-shadow: 6px 6px 0 #000;
 }
