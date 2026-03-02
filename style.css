@@ -16,6 +16,7 @@ body {
 
 .navbar {
 	margin-bottom: 1.5rem;
+	background-color: #e8d4f5;
 }
 
 .navbar .container {
@@ -46,6 +47,7 @@ body {
 	width: 100%;
 	padding: 0.75rem;
 	border-radius: 0;
+	background-color: #d4f5e8;
 }
 
 .search-wrapper svg {
@@ -73,7 +75,7 @@ body {
 }
 
 .btn-random {
-	background-color: #fff;
+	background-color: #f5d4e8;
 }
 
 .btn-random:hover {
@@ -96,6 +98,7 @@ body {
 .sidebar {
 	width: 100%;
 	padding: 0.5rem;
+	background-color: #f5ecd4;
 }
 
 @media (min-width: 768px) {
@@ -159,7 +162,7 @@ body {
 }
 
 .item-image {
-	background-color: #f3f4f6;
+	background-color: #c8c8c8;
 	display: flex;
 	justify-content: center;
 	position: relative;
@@ -236,6 +239,7 @@ body {
 	text-align: center;
 	border: 2px solid #000;
 	box-shadow: 8px 8px 0 #000;
+	background-color: #e8d4f5;
 }
 
 .modal-content h2 {
@@ -245,7 +249,7 @@ body {
 }
 
 .game-area {
-	background-color: #fff;
+	background-color: #d0d0d0;
 	height: 30rem;
 	margin-bottom: 1rem;
 	display: flex;
@@ -276,7 +280,7 @@ body {
 }
 
 .btn-play {
-	background-color: #fff;
+	background-color: #d0d0d0;
 }
 
 .btn-play:hover {
@@ -284,7 +288,7 @@ body {
 }
 
 .btn-close {
-	background-color: #fff;
+	background-color: #d0d0d0;
 }
 
 .btn-close:hover {
@@ -295,7 +299,7 @@ body {
 	margin-top: 1rem;
 	padding: 0.75rem 1.5rem;
 	font-weight: bold;
-	background-color: #fff;
+	background-color: #d0d0d0;
 	color: #000;
 	border: 2px solid #000;
 	box-shadow: 4px 4px 0 #000;
