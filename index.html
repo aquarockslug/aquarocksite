@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aquarock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">aquarock.xyz</h1>
+
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="search"
+            class="search-input"
+            placeholder="Search games..."
+          />
+        </div>
+
+        <div class="nav-buttons">
+          <span id="scoreDisplay">Score: 0</span>
+          <button id="playRandomBtn" class="btn btn-random">
+            Random Game
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container main-content">
+      <aside class="sidebar">
+        <h2>Filters</h2>
+        <h3>Category</h3>
+        <div id="filters-container">
+          <div>
+            <input type="checkbox" class="check" id="action" />
+            <label for="action">Action</label>
+          </div>
+          <div>
+            <input type="checkbox" class="check" id="board" />
+            <label for="board">Board</label>
+          </div>
+          <div>
+            <input type="checkbox" class="check" id="puzzle" />
+            <label for="puzzle">Puzzle</label>
+          </div>
+        </div>
+      </aside>
+
+      <div id="products-wrapper" class="products-grid"></div>
+    </main>
+
+    <div id="gameModal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="gameTitle"></h2>
+        <div id="gameArea" class="game-area">
+          <p class="loading-text">Game loading...</p>
+        </div>
+        <p id="gameDescription"></p>
+        <div class="modal-buttons">
+          <button id="playGameBtn" class="btn btn-play">▶ Play Now</button>
+          <button id="closeModalBtn" class="btn btn-close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
