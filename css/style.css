@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Agave";
-	src: url("agave.ttf") format("truetype");
+	src: url("../agave.ttf") format("truetype");
 }
 
 * {
