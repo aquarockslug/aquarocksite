@@ -16,7 +16,7 @@ body {
 
 .navbar {
 	margin-bottom: 1.5rem;
-	background-color: #e8d4f5;
+	background-color: #eff1f5;
 }
 
 .navbar .container {
@@ -47,7 +47,7 @@ body {
 	width: 100%;
 	padding: 0.75rem;
 	border-radius: 0;
-	background-color: #d4f5e8;
+	background-color: #dce0e8;
 }
 
 .search-wrapper svg {
@@ -69,17 +69,48 @@ body {
 	padding: 0.75rem 1.5rem;
 	font-weight: bold;
 	cursor: pointer;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	border: 2px solid #4c4f69;
+	box-shadow: 4px 4px 0 #4c4f69;
 	font-family: "Roboto Mono", monospace;
 }
 
+.btn-play {
+	background-color: #40a02b;
+}
+
+.btn-play:hover {
+	box-shadow: 6px 6px 0 #4c4f69;
+}
+
+.btn-close {
+	background-color: #fe640b;
+}
+
+.btn-close:hover {
+	box-shadow: 6px 6px 0 #4c4f69;
+}
+
+.click-btn {
+	margin-top: 1rem;
+	padding: 0.75rem 1.5rem;
+	font-weight: bold;
+	background-color: #ccd0da;
+	color: #4c4f69;
+	border: 2px solid #4c4f69;
+	box-shadow: 4px 4px 0 #4c4f69;
+	cursor: pointer;
+}
+
+.click-btn:hover {
+	box-shadow: 6px 6px 0 #4c4f69;
+}
+
 .btn-random {
-	background-color: #f5d4e8;
+	background-color: #7287fd;
 }
 
 .btn-random:hover {
-	box-shadow: 6px 6px 0 #000;
+	box-shadow: 6px 6px 0 #4c4f69;
 }
 
 .main-content {
@@ -98,7 +129,7 @@ body {
 .sidebar {
 	width: 100%;
 	padding: 0.5rem;
-	background-color: #f5ecd4;
+	background-color: #eff1f5;
 }
 
 @media (min-width: 768px) {
@@ -162,19 +193,19 @@ body {
 }
 
 .item-image {
-	background-color: #c8c8c8;
+	background-color: #ccd0da;
 	display: flex;
 	justify-content: center;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	border: 2px solid #4c4f69;
+	box-shadow: 4px 4px 0 #4c4f69;
 	aspect-ratio: 1;
 }
 
 .item-image:hover {
-	box-shadow: 6px 6px 0 #000;
+	box-shadow: 6px 6px 0 #4c4f69;
 }
 
 .item-image img {
@@ -206,7 +237,7 @@ body {
 }
 
 .item small {
-	color: #666;
+	color: #6c6f85;
 	text-transform: uppercase;
 }
 
@@ -237,9 +268,9 @@ body {
 	width: 100%;
 	margin: 1rem;
 	text-align: center;
-	border: 2px solid #000;
-	box-shadow: 8px 8px 0 #000;
-	background-color: #e8d4f5;
+	border: 2px solid #4c4f69;
+	box-shadow: 8px 8px 0 #4c4f69;
+	background-color: #eff1f5;
 }
 
 .modal-content h2 {
@@ -249,7 +280,7 @@ body {
 }
 
 .game-area {
-	background-color: #d0d0d0;
+	background-color: #ccd0da;
 	height: 30rem;
 	margin-bottom: 1rem;
 	display: flex;
@@ -257,7 +288,7 @@ body {
 	justify-content: center;
 	overflow: hidden;
 	position: relative;
-	border: 2px solid #000;
+	border: 2px solid #4c4f69;
 }
 
 .game-area canvas {
@@ -266,7 +297,7 @@ body {
 }
 
 .loading-text {
-	color: #666;
+	color: #6c6f85;
 }
 
 #gameDescription {
