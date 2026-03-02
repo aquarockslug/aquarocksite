@@ -139,7 +139,7 @@ body {
 	width: auto;
 }
 
-.products-grid {
+.games-grid {
 	width: 100%;
 	max-width: 56rem;
 	margin: 0 auto;
@@ -149,13 +149,13 @@ body {
 }
 
 @media (min-width: 640px) {
-	.products-grid {
+	.games-grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
 @media (min-width: 1280px) {
-	.products-grid {
+	.games-grid {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }

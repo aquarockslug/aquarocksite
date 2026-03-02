@@ -14,7 +14,7 @@ const games = [
 	},
 ];
 
-const productsWrapperEl = document.getElementById("products-wrapper");
+const gamesWrapperEl = document.getElementById("games-wrapper");
 const checkEls = document.querySelectorAll(".check");
 const filtersContainer = document.getElementById("filters-container");
 const searchInput = document.getElementById("search");
@@ -28,37 +28,37 @@ const closeModalBtn = document.getElementById("closeModalBtn");
 
 let currentGame = null;
 
-const productsEls = [];
+const gamesEls = [];
 
 games.forEach((game) => {
-	const productEl = createProductElement(game);
-	productsEls.push(productEl);
-	productsWrapperEl.appendChild(productEl);
+	const gameEl = createGameElement(game);
+	gamesEls.push(gameEl);
+	gamesWrapperEl.appendChild(gameEl);
 });
 
-filtersContainer.addEventListener("change", filterProducts);
-searchInput.addEventListener("input", filterProducts);
+filtersContainer.addEventListener("change", filterGames);
+searchInput.addEventListener("input", filterGames);
 playRandomBtn.addEventListener("click", playRandomGame);
 closeModalBtn.addEventListener("click", closeModal);
 playGameBtn.addEventListener("click", startGame);
 
-function createProductElement(game) {
-	const productEl = document.createElement("div");
+function createGameElement(game) {
+	const gameEl = document.createElement("div");
 
-	productEl.className = "item box";
+	gameEl.className = "item box";
 
-	productEl.innerHTML = `<div class="item-image">
+	gameEl.innerHTML = `<div class="item-image">
   <img src="${game.url}" alt="${game.name}" />
   <span class="item-status ${game.type}">Play</span>
 </div>
 <h3>${game.name}</h3>
 <small>${game.type}</small>`;
 
-	productEl
+	gameEl
 		.querySelector(".item-status")
 		.addEventListener("click", () => openGameModal(game));
 
-	return productEl;
+	return gameEl;
 }
 
 function openGameModal(game) {
@@ -114,13 +114,13 @@ function stopGame() {
 	currentGame = null;
 }
 
-function filterProducts() {
+function filterGames() {
 	const searchTerm = searchInput.value.trim().toLowerCase();
 	const checkedCategories = Array.from(checkEls)
 		.filter((check) => check.checked)
 		.map((check) => check.id);
 
-	productsEls.forEach((productEl, index) => {
+	gamesEls.forEach((gameEl, index) => {
 		const game = games[index];
 
 		const matchesSearchTerm = game.name.toLowerCase().includes(searchTerm);
@@ -128,9 +128,9 @@ function filterProducts() {
 			checkedCategories.length === 0 || checkedCategories.includes(game.type);
 
 		if (matchesSearchTerm && isInCheckedCategory) {
-			productEl.classList.remove("hidden");
+			gameEl.classList.remove("hidden");
 		} else {
-			productEl.classList.add("hidden");
+			gameEl.classList.add("hidden");
 		}
 	});
 }
