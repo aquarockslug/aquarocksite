@@ -14,14 +14,11 @@ const games = [
 	},
 ];
 
-const products = games;
-
 const productsWrapperEl = document.getElementById("products-wrapper");
 const checkEls = document.querySelectorAll(".check");
 const filtersContainer = document.getElementById("filters-container");
 const searchInput = document.getElementById("search");
 const playRandomBtn = document.getElementById("playRandomBtn");
-const scoreDisplay = document.getElementById("scoreDisplay");
 const gameModal = document.getElementById("gameModal");
 const gameTitle = document.getElementById("gameTitle");
 const gameDescription = document.getElementById("gameDescription");
@@ -29,9 +26,7 @@ const gameArea = document.getElementById("gameArea");
 const playGameBtn = document.getElementById("playGameBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
 
-let score = 0;
 let currentGame = null;
-let gameInterval = null;
 
 const productsEls = [];
 
@@ -87,9 +82,6 @@ function playRandomGame() {
 function startGame() {
 	if (!currentGame) return;
 
-	score = 0;
-	updateScore();
-
 	const htmlPath = currentGame.url.replace(".png", ".html");
 
 	gameArea.innerHTML = '<p class="loading-text">Loading game...</p>';
@@ -120,10 +112,6 @@ function startGame() {
 
 function stopGame() {
 	currentGame = null;
-}
-
-function updateScore() {
-	scoreDisplay.textContent = `Score: ${score}`;
 }
 
 function filterProducts() {
