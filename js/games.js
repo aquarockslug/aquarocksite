@@ -1,21 +1,31 @@
 export const games = [
 	{
 		name: "Star Checkers",
-		url: "games/star-checkers/star-checkers.png",
+		url: "games/star-checkers/star-checkers.html",
+		img: "games/star-checkers/star-checkers.png",
 		type: "board",
 		description:
 			"be the first to move all 10 of your marbles from your starting triangle to the opposite corner",
 	},
 	{
-		name: "MancalaJS",
-		url: "games/mancala/mancala.png",
+		name: "Mancala",
+		url: "games/mancala/mancala.html",
+		img: "games/mancala/mancala.png",
 		type: "board",
 		description: "Mancala in JS",
 	},
 	{
 		name: "Gas Mask",
-		url: "games/gas-game/gas-game.png",
+		url: "games/gas-game/gas-game.html",
+		img: "games/gas-game/gas-game.png",
 		type: "puzzle",
+		description: "I haven't added this game to the site yet",
+	},
+	{
+		name: "Fungal Escape",
+		url: "games/Fungal-Escape",
+		img: "games/Fungal-Escape/assets/fungal-escape-titleart.png",
+		type: "action",
 		description: "I haven't added this game to the site yet",
 	},
 ];

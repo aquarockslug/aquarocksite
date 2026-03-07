@@ -25,7 +25,7 @@ const createGameElement = (game) => {
 	const el = createEl("div");
 	el.className = "item box";
 	el.innerHTML = `<div class="item-image">
-  <img src="${game.url}" alt="${game.name}" />
+  <img src="${game.img}" alt="${game.name}" />
   <span class="item-status ${game.type}">Play</span>
 </div>
 <h3>${game.name}</h3>
@@ -61,32 +61,40 @@ const stopGame = () => {
 };
 
 const loadGame = (game) => {
-	const htmlPath = game.url.replace(".png", ".html");
-	elements.area.innerHTML = '<p class="loading-text">Loading game...</p>';
+	const singleFileGame = (game) => {
+		elements.area.innerHTML = '<p class="loading-text">Loading game...</p>';
+		fetch(game.url)
+			.then((response) => response.text())
+			.then((html) => {
+				const parser = new DOMParser();
+				const doc = parser.parseFromString(html, "text/html");
+				const scripts = doc.querySelectorAll("script");
 
-	fetch(htmlPath)
-		.then((response) => response.text())
-		.then((html) => {
-			const parser = new DOMParser();
-			const doc = parser.parseFromString(html, "text/html");
-			const scripts = doc.querySelectorAll("script");
+				elements.area.innerHTML = "";
 
-			elements.area.innerHTML = "";
+				Array.from(scripts)
+					.map((script) => {
+						const newScript = createEl("script");
+						if (script.src) newScript.src = script.src;
+						else newScript.textContent = script.textContent;
+						return newScript;
+					})
+					.forEach((newScript) => {
+						elements.area.appendChild(newScript);
+					});
+			})
+			.catch((err) => {
+				elements.area.innerHTML = `<p class="loading-text">Error loading game: ${err.message}</p>`;
+			});
+	};
+	const multipleFileGame = (game) => {
+		const url = game.url + "/index.html";
+		console.log(url);
+		window.location.href = url;
+	};
 
-			Array.from(scripts)
-				.map((script) => {
-					const newScript = createEl("script");
-					if (script.src) newScript.src = script.src;
-					else newScript.textContent = script.textContent;
-					return newScript;
-				})
-				.forEach((newScript) => {
-					elements.area.appendChild(newScript);
-				});
-		})
-		.catch((err) => {
-			elements.area.innerHTML = `<p class="loading-text">Error loading game: ${err.message}</p>`;
-		});
+	if (game.url.includes(".html")) singleFileGame(game);
+	else multipleFileGame(game);
 };
 
 const handleFilter = () => {
