@@ -26,7 +26,7 @@ export const games = [
 		url: "games/Fungal-Escape",
 		img: "games/Fungal-Escape/assets/fungal-escape-titleart.png",
 		type: "action",
-		description: "I haven't added this game to the site yet",
+		description: "Dodge the bullets",
 	},
 ];
 
