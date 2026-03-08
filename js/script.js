@@ -88,8 +88,10 @@ const loadGame = (game) => {
 			});
 	};
 	const multipleFileGame = (game) => {
+		// TODO put a border around the game to keep it at the correct size
 		const url = game.url + "/index.html";
 		console.log(url);
+		// TODO embed the game into the game area modal
 		window.location.href = url;
 	};
 

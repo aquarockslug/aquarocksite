@@ -16,10 +16,10 @@ export const games = [
 	},
 	{
 		name: "Gas Mask",
-		url: "games/gas-game/gas-game.html",
-		img: "games/gas-game/gas-game.png",
+		url: "games/gas-game",
+		img: "games/gas-game/screenshot.png",
 		type: "puzzle",
-		description: "I haven't added this game to the site yet",
+		description: "Navigate the maze while avoiding breathing in toxic gas",
 	},
 	{
 		name: "Fungal Escape",
