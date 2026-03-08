@@ -63,6 +63,13 @@ export const games = [
 		type: "puzzle",
 		description: "Trivia",
 	},
+	{
+		name: "Snail Mail",
+		img: "games/snail_mail",
+		img: "games/trivia_cubes/images/cube.svg",
+		type: "puzzle",
+		description: "Deliver packages",
+	},
 ];
 
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
