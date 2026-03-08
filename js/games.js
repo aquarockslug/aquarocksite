@@ -49,6 +49,13 @@ export const games = [
 		type: "action",
 		description: "Make a Megaman level",
 	},
+	{
+		name: "Mega Man Queen's Gambit",
+		url: "games/mmqg-html5",
+		img: "games/mmqg-html5/index.png",
+		type: "action",
+		description: "Mega Man fangame",
+	},
 ];
 
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
