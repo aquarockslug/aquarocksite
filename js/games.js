@@ -61,7 +61,7 @@ export const games = [
 		url: "games/trivia_cubes",
 		img: "games/trivia_cubes/images/cube.svg",
 		type: "puzzle",
-		description: "Mega Man fangame",
+		description: "Trivia",
 	},
 ];
 
