@@ -35,6 +35,20 @@ export const games = [
 		type: "action",
 		description: "Dodge the bullets",
 	},
+	{
+		name: "Boop",
+		url: "games/Boop",
+		img: "games/Boop/tiles.png",
+		type: "board",
+		description: "Knock cats off the board",
+	},
+	{
+		name: "Mini Mega Maker",
+		url: "games/mini_mega",
+		img: "games/mini_mega/assets/images/megaman.png",
+		type: "action",
+		description: "Make a Megaman level",
+	},
 ];
 
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
