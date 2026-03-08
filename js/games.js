@@ -19,7 +19,7 @@ export const games = [
 		url: "games/gas-game",
 		img: "games/gas-game/screenshot.png",
 		type: "puzzle",
-		description: "Navigate the maze while avoiding breathing in toxic gas",
+		description: "Navigate a maze of pipes while avoiding breathing in toxic gas",
 	},
 	{
 		name: "Fungal Escape",
@@ -54,6 +54,13 @@ export const games = [
 		url: "games/mmqg-html5",
 		img: "games/mmqg-html5/index.png",
 		type: "action",
+		description: "Mega Man fangame",
+	},
+	{
+		name: "Trivia Cubes",
+		url: "games/trivia_cubes",
+		img: "games/trivia_cubes/images/cube.svg",
+		type: "puzzle",
 		description: "Mega Man fangame",
 	},
 ];
