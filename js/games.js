@@ -28,6 +28,13 @@ export const games = [
 		type: "action",
 		description: "Dodge the bullets",
 	},
+	{
+		name: "Cosmic Critters",
+		url: "games/Cosmic-Critters",
+		img: "games/Cosmic-Critters/rock.png",
+		type: "action",
+		description: "Dodge the bullets",
+	},
 ];
 
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
