@@ -1,0 +1,68 @@
+<!DOCTYPE html><head>
+  <title>Dimension Drop</title>
+  <meta charset=utf-8>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="stylesheet" href="css/tiny-brutalism.css" />
+  <link rel="stylesheet" href="css/modern-normalize.min.css" />
+  <style>
+    #ui {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #menu {
+	    width: 33%;
+	    background-color: white;
+    }
+    #floorLabel {
+	    color: white;
+	    position: absolute;
+	top: 10px
+    }
+    .box {
+	    border-color: magenta;
+	    box-shadow: magenta;
+    }
+    button {
+	    border-color: magenta;
+	    box-shadow: magenta;
+    }
+  </style>
+</head><body>
+  <div id="ui">
+	  <div id="floorLabel" class="box">Floor Number 1</div>
+    <div id="menu" class="box">
+      <h1>Dimension Drop</h1>
+	<p> Follow the cracks and drop to the next floor! </p>
+	<p id="timeLabel"> How quickly can you clear 5 floors? </p>
+        <button onclick="start(); menu.hidden = true">Start</button>
+    </div>
+  </div>
+  <script src=lib/littlejs.js></script>
+  <script src=lib/fpo.src.js></script>
+  <script src=lib/rhill-voronoi-core.js></script>
+  <script>
+fn = FPO.std;
+started = false
+
+settings = {
+	screenResolution: vec2(720),
+	openmojiResolution: vec2(32),
+	goalCount: 5,
+	bgScroll: 0.1,
+	initSpeed: 0.25
+};
+
+sfx = {
+	teleport: new Sound([0.5,,166,.02,.06,.18,1,.1,50,,,,,,,.1,.03,.76,.1]),
+	void: new Sound([1.5,,38,.08,.12,.45,2,1.4,,,,,,1.8,,.2,,.34,.22])
+}
+  </script>
+  <script src=game.js></script>
+  <script>engineInit(gameInit, gameUpdate, gameUpdatePost, gameRender, gameRenderPost, ['tiles.png', 'space-1.png', 'space-2.png']);</script>
+</body>

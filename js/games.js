@@ -65,10 +65,24 @@ export const games = [
 	},
 	{
 		name: "Snail Mail",
-		img: "games/snail_mail",
+		url: "games/snail_mail",
 		img: "games/trivia_cubes/images/cube.svg",
 		type: "puzzle",
 		description: "Deliver packages",
+	},
+	{
+		name: "Dimension Drop",
+		url: "games/dimension_drop",
+		img: "games/dimension_drop/screenshot.png",
+		type: "action",
+		description: "Find the exit",
+	},
+	{
+		name: "Space Flight",
+		url: "games/space_game",
+		img: "games/space_game/screenshot.png",
+		type: "action",
+		description: "Fly through rings",
 	},
 ];
 

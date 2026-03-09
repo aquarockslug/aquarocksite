@@ -31,7 +31,7 @@ const createGameElement = (game) => {
 <h3>${game.name}</h3>
 <small>${game.type}</small>`;
 
-	el.querySelector(".item-status").addEventListener("click", () => openModal(game));
+	el.querySelector(".item-image").addEventListener("click", () => openModal(game));
 
 	return el;
 };
