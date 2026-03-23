@@ -3,6 +3,58 @@
 /* Importing a Monochrome Font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
+:root {
+	--bg-color: #e5e5e5;
+	--text-color: #000;
+	--border-color: #000;
+	--shadow-color: #000;
+	--accent-bg: #d0d0d0;
+	--button-bg: #d0d0d0;
+	--muted-color: #808080;
+	--alert-info-bg: #d4e8f5;
+	--alert-warning-bg: #f5ecd4;
+	--alert-danger-bg: #f5d4d4;
+}
+
+[data-theme="dark"] {
+	--bg-color: #1a1a2e;
+	--text-color: #eee;
+	--border-color: #eee;
+	--shadow-color: #eee;
+	--accent-bg: #16213e;
+	--button-bg: #0f3460;
+	--muted-color: #a0a0b0;
+	--alert-info-bg: #1a3a4a;
+	--alert-warning-bg: #3a3520;
+	--alert-danger-bg: #3a1a20;
+}
+
+[data-theme="sepia"] {
+	--bg-color: #f4e4bc;
+	--text-color: #5c4a32;
+	--border-color: #5c4a32;
+	--shadow-color: #5c4a32;
+	--accent-bg: #f0d9b5;
+	--button-bg: #e6d2a0;
+	--muted-color: #7a6548;
+	--alert-info-bg: #e8dfc8;
+	--alert-warning-bg: #e8dfc8;
+	--alert-danger-bg: #e8dfc8;
+}
+
+[data-theme="monochrome"] {
+	--bg-color: #fff;
+	--text-color: #000;
+	--border-color: #000;
+	--shadow-color: #000;
+	--accent-bg: #f0f0f0;
+	--button-bg: #fff;
+	--muted-color: #555;
+	--alert-info-bg: #e0e0e0;
+	--alert-warning-bg: #e0e0e0;
+	--alert-danger-bg: #e0e0e0;
+}
+
 /* Basic Reset */
 * {
 	margin: 0;
@@ -14,8 +66,8 @@ html,
 body {
 	height: 100%;
 	font-family: "Roboto Mono", monospace;
-	background-color: #e5e5e5;
-	color: #000;
+	background-color: var(--bg-color);
+	color: var(--text-color);
 }
 
 /* Typography */
@@ -98,10 +150,10 @@ button,
 	font-size: 1rem;
 	text-align: center;
 	text-decoration: none;
-	color: #000;
-	background-color: #d0d0d0;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	color: var(--text-color);
+	background-color: var(--button-bg);
+	border: 2px solid var(--border-color);
+	box-shadow: 4px 4px 0 var(--shadow-color);
 	cursor: pointer;
 	transition: all 0.2s ease;
 	font-family: "Roboto Mono", monospace;
@@ -109,7 +161,7 @@ button,
 
 button:hover,
 .button:hover {
-	box-shadow: 6px 6px 0 #000;
+	box-shadow: 6px 6px 0 var(--shadow-color);
 }
 
 /* Forms */
@@ -119,8 +171,8 @@ select {
 	width: 100%;
 	padding: 0.75rem;
 	margin-bottom: 1rem;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	border: 2px solid var(--border-color);
+	box-shadow: 4px 4px 0 var(--shadow-color);
 	font-family: "Roboto Mono", monospace;
 }
 
@@ -148,8 +200,8 @@ select[multiple] {
 /* Boxes */
 .box {
 	padding: 1rem;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	border: 2px solid var(--border-color);
+	box-shadow: 4px 4px 0 var(--shadow-color);
 	margin-bottom: 1rem;
 }
 
@@ -187,24 +239,24 @@ select[multiple] {
 /* Alerts */
 .alert {
 	padding: 1rem;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	border: 2px solid var(--border-color);
+	box-shadow: 4px 4px 0 var(--shadow-color);
 	margin-bottom: 1rem;
 }
 
 .alert-info {
-	background-color: #d4e8f5;
-	color: #000;
+	background-color: var(--alert-info-bg);
+	color: var(--text-color);
 }
 
 .alert-warning {
-	background-color: #f5ecd4;
-	color: #000;
+	background-color: var(--alert-warning-bg);
+	color: var(--text-color);
 }
 
 .alert-danger {
-	background-color: #f5d4d4;
-	color: #000;
+	background-color: var(--alert-danger-bg);
+	color: var(--text-color);
 }
 
 /* Modals */
@@ -221,24 +273,24 @@ select[multiple] {
 }
 
 .modal-content {
-	background-color: #d0d0d0;
+	background-color: var(--accent-bg);
 	padding: 2rem;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	border: 2px solid var(--border-color);
+	box-shadow: 4px 4px 0 var(--shadow-color);
 }
 
 /* Progress Bars */
 .progress {
 	width: 100%;
-	background-color: #e0e0e0;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	background-color: var(--accent-bg);
+	border: 2px solid var(--border-color);
+	box-shadow: 4px 4px 0 var(--shadow-color);
 	height: 1.5rem;
 }
 
 .progress-bar {
 	height: 100%;
-	background-color: #000;
+	background-color: var(--text-color);
 	width: 0;
 	transition: width 0.2s ease;
 }
@@ -258,9 +310,9 @@ select[multiple] {
 
 /* Code Container */
 .code-container {
-	background-color: #c8c8c8;
-	border: 2px solid #000;
-	box-shadow: 4px 4px 0 #000;
+	background-color: var(--accent-bg);
+	border: 2px solid var(--border-color);
+	box-shadow: 4px 4px 0 var(--shadow-color);
 	padding: 1rem;
 	font-family: "Roboto Mono", monospace;
 	margin-bottom: 1rem;
@@ -268,12 +320,12 @@ select[multiple] {
 
 /* Text Links */
 a {
-	color: #000;
+	color: var(--text-color);
 	text-decoration: underline;
 }
 
 a:hover {
-	color: #808080;
+	color: var(--muted-color);
 }
 
 /* Media Queries */

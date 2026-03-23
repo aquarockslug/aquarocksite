@@ -15,6 +15,7 @@ const elements = {
 	area: $("#gameArea"),
 	playGameBtn: $("#playGameBtn"),
 	closeModalBtn: $("#closeModalBtn"),
+	themeSelect: $("#themeSelect"),
 };
 
 const state = {
@@ -126,6 +127,16 @@ const init = () => {
 	elements.playRandomBtn.addEventListener("click", playRandomGame);
 	elements.closeModalBtn.addEventListener("click", closeModal);
 	elements.playGameBtn.addEventListener("click", startGame);
+
+	const savedTheme = localStorage.getItem("theme") || "light";
+	document.documentElement.setAttribute("data-theme", savedTheme);
+	elements.themeSelect.value = savedTheme;
+
+	elements.themeSelect.addEventListener("change", (e) => {
+		const theme = e.target.value;
+		document.documentElement.setAttribute("data-theme", theme);
+		localStorage.setItem("theme", theme);
+	});
 };
 
 init();
