@@ -177,10 +177,6 @@ body {
 	transition: transform 0.2s ease;
 }
 
-.logo:hover {
-	transform: rotate(-2deg) scale(1.05);
-}
-
 .search-wrapper {
 	width: 100%;
 	position: relative;

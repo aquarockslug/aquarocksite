@@ -12,7 +12,7 @@ const elements = {
 	modal: $("#gameModal"),
 	title: $("#gameTitle"),
 	description: $("#gameDescription"),
-	area: $("#gameArea"),
+	gameArea: $("#gameArea"),
 	playGameBtn: $("#playGameBtn"),
 	closeModalBtn: $("#closeModalBtn"),
 	themeSelect: $("#themeSelect"),
@@ -48,12 +48,16 @@ const openModal = (game) => {
 	state.currentGame = game;
 	elements.title.textContent = game.name;
 	elements.description.textContent = game.description;
-	elements.area.innerHTML = `<p class="loading-text">Click "Play Now" to start!</p>`;
+	elements.gameArea.innerHTML = `<p class="loading-text">Click "Play Now" to start!</p>`;
 	elements.modal.classList.remove("hidden");
+	startGame(game);
+	console.log("🪚 game:", game);
 };
 
 const closeModal = () => {
 	elements.modal.classList.add("hidden");
+	elements.gameArea.innerHTML = "";
+	elements.gameArea.removeAttribute("style");
 	stopGame();
 };
 
@@ -63,7 +67,7 @@ const stopGame = () => {
 
 const loadGame = (game) => {
 	const singleFileGame = (game) => {
-		elements.area.innerHTML = '<p class="loading-text">Loading game...</p>';
+		elements.gameArea.innerHTML = '<p class="loading-text">Loading game...</p>';
 		fetch(game.url)
 			.then((response) => response.text())
 			.then((html) => {
@@ -71,7 +75,7 @@ const loadGame = (game) => {
 				const doc = parser.parseFromString(html, "text/html");
 				const scripts = doc.querySelectorAll("script");
 
-				elements.area.innerHTML = "";
+				elements.gameArea.innerHTML = "";
 
 				Array.from(scripts)
 					.map((script) => {
@@ -81,18 +85,17 @@ const loadGame = (game) => {
 						return newScript;
 					})
 					.forEach((newScript) => {
-						elements.area.appendChild(newScript);
+						elements.gameArea.appendChild(newScript);
 					});
 			})
 			.catch((err) => {
-				elements.area.innerHTML = `<p class="loading-text">Error loading game: ${err.message}</p>`;
+				elements.gameArea.innerHTML = `<p class="loading-text">Error loading game: ${err.message}</p>`;
 			});
 	};
 	const multipleFileGame = (game) => {
 		// TODO put a border around the game to keep it at the correct size
-		const url = game.url + "/index.html";
-		console.log(url);
-		// TODO embed the game into the game area modal
+		const url = `${game.url}/index.html`;
+		// TODO embed the game into the game gameArea
 		window.location.href = url;
 	};
 
