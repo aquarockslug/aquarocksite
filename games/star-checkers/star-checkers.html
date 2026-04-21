@@ -1,5 +1,14 @@
 <!doctype html>
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; }
+    #gameArea { width: 100%; height: 100%; }
+    canvas { display: block; }
+  </style>
+</head>
 <body>
+  <div id="gameArea"></div>
   <script>
 // LittleJS Engine - MIT License - Copyright 2021 Frank Force
 // https://github.com/KilledByAPixel/LittleJS
@@ -562,6 +571,18 @@ function gameRender() {
 }
 // post-render hook
 function postGameRender() {}
+
+function resizeGame() {
+  const container = document.getElementById('gameArea');
+  if (mainCanvas && container) {
+    mainCanvas.width = container.clientWidth;
+    mainCanvas.height = container.clientHeight;
+    mainCanvasSize = vec2(mainCanvas.width, mainCanvas.height);
+    cameraSize = mainCanvasSize.scale(1/cameraScale);
+  }
+}
+
+window.addEventListener('resize', resizeGame);
   </script>
-  <script>engineInit(gameInit, gameUpdate, null, gameRender, postGameRender, [], document.getElementById('gameArea'))</script>
+  <script>engineInit(gameInit, gameUpdate, null, gameRender, postGameRender, [], document.getElementById('gameArea')); resizeGame();</script>
 </body>

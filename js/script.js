@@ -48,10 +48,9 @@ const openModal = (game) => {
 	state.currentGame = game;
 	elements.title.textContent = game.name;
 	elements.description.textContent = game.description;
-	elements.gameArea.innerHTML = `<p class="loading-text">Click "Play Now" to start!</p>`;
+	elements.gameArea.innerHTML = `<p class="loading-text">Loading...</p>`;
 	elements.modal.classList.remove("hidden");
 	startGame(game);
-	console.log("🪚 game:", game);
 };
 
 const closeModal = () => {
@@ -66,41 +65,8 @@ const stopGame = () => {
 };
 
 const loadGame = (game) => {
-	const singleFileGame = (game) => {
-		elements.gameArea.innerHTML = '<p class="loading-text">Loading game...</p>';
-		fetch(game.url)
-			.then((response) => response.text())
-			.then((html) => {
-				const parser = new DOMParser();
-				const doc = parser.parseFromString(html, "text/html");
-				const scripts = doc.querySelectorAll("script");
-
-				elements.gameArea.innerHTML = "";
-
-				Array.from(scripts)
-					.map((script) => {
-						const newScript = createEl("script");
-						if (script.src) newScript.src = script.src;
-						else newScript.textContent = script.textContent;
-						return newScript;
-					})
-					.forEach((newScript) => {
-						elements.gameArea.appendChild(newScript);
-					});
-			})
-			.catch((err) => {
-				elements.gameArea.innerHTML = `<p class="loading-text">Error loading game: ${err.message}</p>`;
-			});
-	};
-	const multipleFileGame = (game) => {
-		// TODO put a border around the game to keep it at the correct size
-		const url = `${game.url}/index.html`;
-		// TODO embed the game into the game gameArea
-		window.location.href = url;
-	};
-
-	if (game.url.includes(".html")) singleFileGame(game);
-	else multipleFileGame(game);
+	const url = game.url.includes(".html") ? game.url : `${game.url}/index.html`;
+	elements.gameArea.innerHTML = `<iframe src="${url}" class="game-iframe"></iframe>`;
 };
 
 const handleFilter = () => {
@@ -129,7 +95,6 @@ const init = () => {
 	elements.search.addEventListener("input", handleFilter);
 	elements.playRandomBtn.addEventListener("click", playRandomGame);
 	elements.closeModalBtn.addEventListener("click", closeModal);
-	elements.playGameBtn.addEventListener("click", startGame);
 
 	const savedTheme = localStorage.getItem("theme") || "light";
 	document.documentElement.setAttribute("data-theme", savedTheme);
