@@ -23,14 +23,15 @@ const state = {
 };
 
 const createGameElement = (game) => {
+	const gameTags = Array.isArray(game.tags) ? game.tags.join(", ") : game.tags;
 	const el = createEl("div");
 	el.className = "item box";
 	el.innerHTML = `<div class="item-image">
   <img src="${game.img}" alt="${game.name}" />
-  <span class="item-status ${game.type}">Play</span>
+  <span class="item-status ${gameTags}">Play</span>
 </div>
 <h3>${game.name}</h3>
-<small>${game.type}</small>`;
+<small>${gameTags}</small>`;
 
 	el.querySelector(".item-image").addEventListener("click", () => openModal(game));
 
