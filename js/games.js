@@ -26,7 +26,7 @@ export const games = [
 		name: "Trivia",
 		url: "games/trivia-cubes/index.html",
 		img: "games/trivia-cubes/screenshot.png",
-		tags: "puzzle",
+		tags: ["puzzle", "touch"],
 		description: "Trivia questions from https://opentdb.com/",
 	},
 	{
@@ -47,7 +47,7 @@ export const games = [
 		name: "Mega Man & Bass Queen's Gambit",
 		url: "games/mmqg/index.html",
 		img: "games/mmqg/index.png",
-		tags: "action",
+		tags: ["action", "touch"],
 		description: "Take on the role of Mega man and defeat Queen's forces, challenging 10 new robot masters and eventually the queen herself!",
 	},
 ];
