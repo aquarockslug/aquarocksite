@@ -36,6 +36,20 @@ export const games = [
 		tags: "action",
 		description: "Dodge bullets with the arrow keys",
 	},
+	{
+		name: "Cosmic Critters",
+		url: "games/cosmic-critters/index.html",
+		img: "games/cosmic-critters/ufo.png",
+		tags: "action",
+		description: "Scan each species of animal",
+	},
+	{
+		name: "Mega Man & Bass Queen's Gambit",
+		url: "games/mmqg/index.html",
+		img: "games/mmqg/index.png",
+		tags: "action",
+		description: "Take on the role of Mega man and defeat Queen's forces, challenging 10 new robot masters and eventually the queen herself!",
+	},
 ];
 
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
