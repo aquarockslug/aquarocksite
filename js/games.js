@@ -73,13 +73,6 @@ export const games = [
 		tags: ["puzzle"],
 		description: "Click and drag anywhere to launch objects.",
 	},
-	{
-		name: "Mega Man & Bass Queen's Gambit Development Version",
-		url: "https://itch.io/embed-upload/15566474?color=5c0823",
-		img: "games/mmqg/index.png",
-		tags: ["action", "touch"],
-		description: "Take on the role of Mega man and defeat Queen's forces, challenging 10 new robot masters and eventually the queen herself!",
-	},
 ];
 
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
