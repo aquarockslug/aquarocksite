@@ -4,3 +4,9 @@
 [submodule "games/fungal-escape"]
 	path = games/fungal-escape
 	url = git@github.com:aquarockslug/fungal-escape.git
+[submodule "games/cosmic-critters"]
+	path = games/cosmic-critters
+	url = git@github.com:aquarockslug/cosmic-critters.git
+[submodule "games/trivia-cubes"]
+	path = games/trivia-cubes
+	url = git@github.com:aquarockslug/trivia-cubes.git
