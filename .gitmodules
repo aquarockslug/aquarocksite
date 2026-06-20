@@ -1,0 +1,3 @@
+[submodule "games/gasworks"]
+	path = games/gasworks
+	url = git@github.com:aquarockslug/gasworks.git
