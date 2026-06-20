@@ -1,3 +1,6 @@
 [submodule "games/gasworks"]
 	path = games/gasworks
 	url = git@github.com:aquarockslug/gasworks.git
+[submodule "games/fungal-escape"]
+	path = games/fungal-escape
+	url = git@github.com:aquarockslug/fungal-escape.git
