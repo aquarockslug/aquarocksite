@@ -48,7 +48,22 @@ export const games = [
 		url: "games/mmqg/index.html",
 		img: "games/mmqg/index.png",
 		tags: ["action", "touch"],
-		description: "Take on the role of Mega man and defeat Queen's forces, challenging 10 new robot masters and eventually the queen herself!",
+		description:
+			"Take on the role of Mega man and defeat Queen's forces, challenging 10 new robot masters and eventually the queen herself!",
+	},
+	{
+		name: "Snail Mail",
+		url: "https://itch.io/embed-upload/12174491?color=333333",
+		img: "https://img.itch.zone/aW1hZ2UvMzE0OTU4NS8xODgxNTgwMS5wbmc=/347x500/bHf3S8.png",
+		tags: ["puzzle"],
+		description: "Find and deliver lost packages while you explore a unique, cozy little island.",
+	},
+	{
+		name: "Sling It",
+		url: "https://itch.io/embed-upload/12060386?color=000000",
+		img: "https://img.itch.zone/aW1hZ2UvMzAxODI1NS8xODEzMzA0NC5wbmc=/original/3BUKhz.png",
+		tags: ["puzzle"],
+		description: "Click and drag anywhere to launch objects.",
 	},
 	{
 		name: "Mega Man & Bass Queen's Gambit Development Version",

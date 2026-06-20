@@ -40,7 +40,7 @@ const createGameElement = (game) => {
 
 const renderGames = (gamesList) => {
 	elements.wrapper.innerHTML = "";
-	gamesList.map(createGameElement).forEach((el) => {
+	gamesList.map(createGameElement).map((el) => {
 		elements.wrapper.appendChild(el);
 	});
 };
@@ -51,17 +51,14 @@ const openModal = (game) => {
 	elements.description.textContent = game.description;
 	elements.gameArea.innerHTML = `<p class="loading-text">Loading...</p>`;
 	elements.modal.classList.remove("hidden");
-	startGame(game);
+
+	if (state.currentGame) loadGame(state.currentGame);
 };
 
 const closeModal = () => {
 	elements.modal.classList.add("hidden");
 	elements.gameArea.innerHTML = "";
 	elements.gameArea.removeAttribute("style");
-	stopGame();
-};
-
-const stopGame = () => {
 	state.currentGame = null;
 };
 
@@ -74,17 +71,8 @@ const handleFilter = () => {
 	const searchTerm = elements.search.value.trim().toLowerCase();
 	const checkedTypes = Array.from(elements.filters)
 		.filter((check) => check.checked)
-		.map((check) => check.id);
-
-	const filteredGames = filterGames(searchTerm, checkedTypes);
-	renderGames(filteredGames);
-};
-
-const playRandomGame = () => openModal(getRandomGame());
-
-const startGame = () => {
-	if (!state.currentGame) return;
-	loadGame(state.currentGame);
+		.map((check) => check.id)
+	renderGames(filterGames(searchTerm, checkedTypes));
 };
 
 const init = () => {
@@ -94,7 +82,7 @@ const init = () => {
 		filter.addEventListener("change", handleFilter);
 	});
 	elements.search.addEventListener("input", handleFilter);
-	elements.playRandomBtn.addEventListener("click", playRandomGame);
+	elements.playRandomBtn.addEventListener("click", () => openModal(getRandomGame()));
 	elements.closeModalBtn.addEventListener("click", closeModal);
 
 	const savedTheme = localStorage.getItem("theme") || "light";
