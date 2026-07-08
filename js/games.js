@@ -18,7 +18,7 @@ export const games = [
 	{
 		name: "Gasworks",
 		url: "games/gasworks/index.html",
-		img: "games/gasworks/gasworks.png",
+		img: "games/gasworks/docs/screenshot.jpg",
 		tags: ["puzzle", "touch", "JS"],
 		description: "Navigate a maze of pipes and toxic gas",
 	},
@@ -73,8 +73,14 @@ export const games = [
 		tags: ["puzzle"],
 		description: "Click and drag anywhere to launch objects.",
 	},
+	{
+		name: "Pokemon Binder",
+		url: "games/pokemon_book/dist/index.html",
+		img: "games/pokemon_book/dist/pages/0.png",
+		tags: ["puzzle"],
+		description: "Use the mouse to flip the pages of this binder of Pokemon cards",
+	},
 ];
-
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
 
 export const filterGamesBySearch = (searchTerm) =>

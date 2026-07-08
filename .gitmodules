@@ -10,3 +10,6 @@
 [submodule "games/gasworks"]
 	path = games/gasworks
 	url = git@github.com:aquarockslug/gasworks.git
+[submodule "games/pokemon_book"]
+	path = games/pokemon_book
+	url = git@github.com:aquarockslug/pokemon_book.git
