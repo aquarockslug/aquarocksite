@@ -68,7 +68,7 @@ export const games = [
 	},
 	{
 		name: "Sling It",
-		url: "https://itch.io/embed-upload/12060386?color=000000",
+		url: "https://itch.io/embed-upload/11754652?color=333333",
 		img: "https://img.itch.zone/aW1hZ2UvMzAxODI1NS8xODEzMzA0NC5wbmc=/original/3BUKhz.png",
 		tags: ["puzzle"],
 		description: "Click and drag anywhere to launch objects.",
