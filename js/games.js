@@ -51,13 +51,13 @@ export const games = [
 		description:
 			"Take on the role of Mega man and defeat Queen's forces, challenging 10 new robot masters and eventually the queen herself!",
 	},
-	{
-		name: "Mega Man & Bass Queen's Gambit Development Version",
-		url: "https://itch.io/embed-upload/15566474?color=5c0823",
-		img: "https://img.itch.zone/aW1nLzI0MTI1ODkxLnBuZw==/180x143%23c/ZuuOko.png",
-		tags: ["action", "touch"],
-		description: "The most current version of the game including unfinished content.",
-	},
+	// {
+	// 	name: "Mega Man & Bass Queen's Gambit Development Version",
+	// 	url: "https://itch.io/embed-upload/15566474?color=5c0823",
+	// 	img: "https://img.itch.zone/aW1nLzI0MTI1ODkxLnBuZw==/180x143%23c/ZuuOko.png",
+	// 	tags: ["action", "touch"],
+	// 	description: "The most current version of the game including unfinished content.",
+	// },
 	{
 		name: "Snail Mail",
 		url: "https://itch.io/embed-upload/12174491?color=333333",
