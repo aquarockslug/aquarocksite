@@ -13,3 +13,6 @@
 [submodule "games/pokemon_book"]
 	path = games/pokemon_book
 	url = git@github.com:aquarockslug/pokemon_book.git
+[submodule "games/card_test"]
+	path = games/card_test
+	url = git@github.com:aquarockslug/card_test.git
