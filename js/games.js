@@ -85,6 +85,10 @@ export const games = [
 		url: "games/Boop/index.html",
 		img: "games/Boop/tiles.png",
 		tags: ["board", "JS"],
+<<<<<<< HEAD
+=======
+		description:
+>>>>>>> 19faa2873fbaaab9d6d74bb8ee61cea4fb6bf62b
 			"Put three of your kittens in a row for a cat... put three of your cats in a row for a win!",
 	},
 ];
