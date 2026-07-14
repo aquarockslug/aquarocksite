@@ -77,7 +77,15 @@ export const games = [
 		name: "Pokemon Binder",
 		url: "games/pokemon_book/dist/index.html",
 		img: "games/pokemon_book/dist/pages/0.png",
-		tags: ["puzzle"],
+		tags: ["JS"],
+		description:
+			"Put three of your kittens in a row for a cat... put three of your cats in a row for a win!",
+	},
+	{
+		name: "Boop",
+		url: "games/Boop/index.html",
+		img: "games/Boop/tiles.png",
+		tags: ["board", "JS"],
 		description: "Use the mouse to flip the pages of this binder of Pokemon cards",
 	},
 ];

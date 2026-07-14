@@ -16,3 +16,6 @@
 [submodule "games/card_test"]
 	path = games/card_test
 	url = git@github.com:aquarockslug/card_test.git
+[submodule "games/Boop"]
+	path = games/Boop
+	url = git@github.com:aquarockslug/Boop.git
