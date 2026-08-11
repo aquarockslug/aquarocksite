@@ -19,3 +19,6 @@
 [submodule "games/Boop"]
 	path = games/Boop
 	url = git@github.com:aquarockslug/Boop.git
+[submodule "games/AbyssalCards"]
+	path = games/AbyssalCards
+	url = git@github.com:aquarockslug/AbyssalCards.git
