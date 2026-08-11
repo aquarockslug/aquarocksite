@@ -93,7 +93,7 @@ export const games = [
 		url: "games/AbyssalCards/index.html",
 		img: "games/AbyssalCards/screenshot.png",
 		tags: ["JS"],
-		description: "",
+		description: "Deep undersea incremental deck building game",
 	},
 ];
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
