@@ -88,6 +88,13 @@ export const games = [
 		description:
 			"Put three of your kittens in a row for a cat... put three of your cats in a row for a win!",
 	},
+	{
+		name: "Abyssal Cards",
+		url: "games/AbyssalCards/index.html",
+		img: "games/AbyssalCards/screenshot.png",
+		tags: ["JS"],
+		description: "",
+	},
 ];
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
 
