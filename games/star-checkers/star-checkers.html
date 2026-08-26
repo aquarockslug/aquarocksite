@@ -532,8 +532,8 @@ function updateMenu() {
 function getMenuPlayerPositions() {
 	const positions = [];
 	const rows = [
-		{ y: 7, players: [PLAYERS[4], PLAYERS[0], PLAYERS[5]] },
-		{ y: 2, players: [PLAYERS[2], PLAYERS[3], PLAYERS[1]] },
+		{ y: 6.75, players: [PLAYERS[4], PLAYERS[0], PLAYERS[5]] },
+		{ y: 1.75, players: [PLAYERS[2], PLAYERS[3], PLAYERS[1]] },
 	];
 	for (const row of rows) {
 		for (let i = 0; i < row.players.length; i++) {
@@ -551,16 +551,10 @@ function renderMenu() {
 
 	// title with soft glow + drop shadow
 	setAdditiveBlendMode(true);
-	drawCircle(vec2(0, 13.2), 7.5, withAlpha(GOLD, 0.06));
+	drawCircle(vec2(0, 9.2), 7.5, withAlpha(GOLD, 0.06));
 	setAdditiveBlendMode(false);
-	drawText("STAR CHECKERS", vec2(0.14, 13.26), 2.6, new Color(0, 0, 0, 0.65));
-	drawText("STAR CHECKERS", vec2(0, 13.4), 2.6, GOLD);
-	drawText(
-		"a race of shining marbles",
-		vec2(0, 11.3),
-		0.85,
-		withAlpha(SANDLIGHTBROWN, 0.9),
-	);
+	drawText("STAR CHECKERS", vec2(0.14, 9.26), 2.6, new Color(0, 0, 0, 0.65));
+	drawText("STAR CHECKERS", vec2(0, 9.4), 2.6, GOLD);
 
 	// color picker
 	const items = getMenuPlayerPositions();
@@ -597,7 +591,7 @@ function renderMenu() {
 	}
 
 	// CPU count control
-	const cpuLabelY = -3;
+	const cpuLabelY = -4;
 	drawText(
 		"CPU OPPONENTS",
 		vec2(0, cpuLabelY + 1.9),
@@ -651,6 +645,7 @@ function renderMenu() {
 
 // initialize game board with hexagonal layout
 function boardInit(radius) {
+	// create a circles of holes
 	const board = [];
 	for (let q = -radius; q <= radius; q++) {
 		const r1 = Math.max(-radius, -q - radius);
@@ -660,6 +655,7 @@ function boardInit(radius) {
 		}
 	}
 
+	// remove holes to create a star shape
 	const filteredBoard = board.filter((hole) => {
 		const { q, r, s } = hole.coords;
 		return (
