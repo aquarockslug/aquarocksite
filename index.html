@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aquarock</title>
+    <title>Aqua Arcade</title>
     <link rel="stylesheet" href="/css/tiny-brutalism.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/lib/sparticles.min.js"></script>
   </head>
   <body>
     <nav class="navbar box">
       <div class="container">
-        <h1 class="logo">aquarock.xyz</h1>
+        <h1 class="logo">Aqua Arcade</h1>
 
         <div class="search-wrapper">
           <input
@@ -30,13 +31,6 @@
             <!-- <option value="moonfly">Moonfly</option> -->
             <!-- <option value="sweetie">Sweetie</option> -->
             <!-- <option value="bluloco">Bluloco</option> -->
-            <!-- <option value="mfd">MFD</option> -->
-            <!-- <option value="mfd_hud">MFD HUD</option> -->
-            <!-- <option value="noirblaze">Noirblaze</option> -->
-            <!-- <option value="mfd_lumon">MFD Lumon</option> -->
-            <!-- <option value="mfd_nerv">MFD NERV</option> -->
-            <!-- <option value="mfd_paper">MFD Paper</option> -->
-            <!-- <option value="blue_moon">Blue Moon</option> -->
           </select>
           <!-- <span id="scoreDisplay" hidden>Score: 0</span> -->
           <button id="playRandomBtn" class="btn btn-random">
@@ -79,7 +73,7 @@
 
     <div id="gameModal" class="modal hidden">
       <div class="modal-content">
-        <h2 id="gameTitle"></h2>
+        <h2 id="gameTitle" style="display:none"></h2>
         <div id="gameArea" class="game-area">
           <p class="loading-text">Game loading...</p>
         </div>

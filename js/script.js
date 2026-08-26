@@ -18,6 +18,24 @@ const elements = {
 	themeSelect: $("#themeSelect"),
 };
 
+window.onload = () =>
+	new Sparticles(document.body, {
+		count: 799,
+		parallax: 17.4,
+		direction: 0,
+		xVariance: 2.6,
+		yVariance: 7.8,
+		alphaSpeed: 21,
+		alphaVariance: 0,
+		minAlpha: -2,
+		maxAlpha: 2,
+		maxSize: 4,
+		style: "both",
+		drift: 5.9,
+		spawnArea: 1,
+		color: ["#ffffff", "#68e8f6", "#3bd4f5", "#017a98", "#017a98", "#017a98"],
+	});
+
 const state = {
 	currentGame: null,
 };
@@ -71,7 +89,7 @@ const handleFilter = () => {
 	const searchTerm = elements.search.value.trim().toLowerCase();
 	const checkedTypes = Array.from(elements.filters)
 		.filter((check) => check.checked)
-		.map((check) => check.id)
+		.map((check) => check.id);
 	renderGames(filterGames(searchTerm, checkedTypes));
 };
 

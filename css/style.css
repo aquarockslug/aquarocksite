@@ -96,109 +96,6 @@
 	--btn-random: #3691ff;
 }
 
-/* MFD */
-[data-theme="mfd"] {
-	--border-color: #0d1d0d;
-	--shadow-color: #0d1d0d;
-	--bg-accent: #7a8b69;
-	--bg-secondary: #5a6b49;
-	--text-color: #1e2d1e;
-	--text-muted: #5a6b49;
-	--btn-play: #0d1d0d;
-	--btn-close: #1e2d1e;
-	--btn-random: #0d1d0d;
-}
-
-[data-theme="mfd"] .btn-play,
-[data-theme="mfd"] .btn-close,
-[data-theme="mfd"] .btn-random {
-	color: #fff;
-}
-
-/* MFD HUD */
-[data-theme="mfd_hud"] {
-	--border-color: #80c080;
-	--shadow-color: #80c080;
-	--bg-accent: #0a140a;
-	--bg-secondary: #1a2a1a;
-	--text-color: #60a060;
-	--text-muted: #2a4a2a;
-	--btn-play: #80c080;
-	--btn-close: #60a060;
-	--btn-random: #80c080;
-}
-
-/* NOIRBLAZE */
-[data-theme="noirblaze"] {
-	--border-color: #ff0088;
-	--shadow-color: #ff0088;
-	--bg-accent: #121212;
-	--bg-secondary: #1a1a1a;
-	--text-color: #b4b4b4;
-	--text-muted: #737373;
-	--btn-play: #ff0088;
-	--btn-close: #b4b4b4;
-	--btn-random: #ff0088;
-}
-
-/* MFD LUMON */
-[data-theme="mfd_lumon"] {
-	--border-color: #a0f0ff;
-	--shadow-color: #a0f0ff;
-	--bg-accent: #0a1520;
-	--bg-secondary: #152535;
-	--text-color: #5ac8d8;
-	--text-muted: #122838;
-	--btn-play: #a0f0ff;
-	--btn-close: #5ac8d8;
-	--btn-random: #a0f0ff;
-}
-
-/* MFD NERV */
-[data-theme="mfd_nerv"] {
-	--border-color: #ffaa44;
-	--shadow-color: #ffaa44;
-	--bg-accent: #1a0a02;
-	--bg-secondary: #2a1508;
-	--text-color: #ee8822;
-	--text-muted: #2a1208;
-	--btn-play: #ffaa44;
-	--btn-close: #ee8822;
-	--btn-random: #ffaa44;
-}
-
-/* MFD PAPER */
-[data-theme="mfd_paper"] {
-	--border-color: #002611;
-	--shadow-color: #002611;
-	--bg-accent: #bbc5b7;
-	--bg-secondary: #a5b5a7;
-	--text-color: #002611;
-	--text-muted: #a5b2a2;
-	--btn-play: #002611;
-	--btn-close: #002611;
-	--btn-random: #002611;
-}
-
-[data-theme="mfd_paper"] .btn-play,
-[data-theme="mfd_paper"] .btn-close,
-[data-theme="mfd_paper"] .btn-random {
-	color: #fff;
-}
-
-/* BLUE MOON */
-[data-theme="blue_moon"] {
-	--border-color: #89ddff;
-	--shadow-color: #89ddff;
-	--bg-accent: #1b1e2b;
-	--bg-secondary: #252a38;
-	--text-color: #a6accd;
-	--text-muted: #8796b0;
-	--btn-play: #89ddff;
-	--btn-close: #a6accd;
-	--btn-random: #89ddff;
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -208,6 +105,17 @@
 body {
 	font-family: "Agave", monospace;
 	color: var(--text-color);
+	background-color: transparent;
+}
+
+canvas.sparticles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	pointer-events: none;
 }
 
 .container {
