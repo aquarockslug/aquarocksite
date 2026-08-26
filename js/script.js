@@ -20,20 +20,20 @@ const elements = {
 
 window.onload = () =>
 	new Sparticles(document.body, {
-		count: 799,
-		parallax: 17.4,
+		count: 140,
+		parallax: 14,
 		direction: 0,
-		xVariance: 2.6,
-		yVariance: 7.8,
-		alphaSpeed: 21,
-		alphaVariance: 0,
-		minAlpha: -2,
-		maxAlpha: 2,
-		maxSize: 4,
-		style: "both",
-		drift: 5.9,
+		xVariance: 4,
+		yVariance: 6,
+		alphaSpeed: 7,
+		alphaVariance: 4,
+		minAlpha: 0.1,
+		maxAlpha: 0.9,
+		maxSize: 7,
+		style: "dot",
+		drift: 14,
 		spawnArea: 1,
-		color: ["#ffffff", "#68e8f6", "#3bd4f5", "#017a98", "#017a98", "#017a98"],
+		color: ["#ffffff", "#bff7ff", "#7fe8f5", "#3bd4f5", "#68e8f6"],
 	});
 
 const state = {

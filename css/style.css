@@ -114,8 +114,112 @@ canvas.sparticles {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: -1;
+	z-index: -2;
 	pointer-events: none;
+	opacity: 0.85;
+	mix-blend-mode: screen;
+}
+
+/* ===== Underwater atmosphere ===== */
+html {
+	background-color: #010d16;
+}
+
+.ocean {
+	position: fixed;
+	inset: 0;
+	z-index: -4;
+	pointer-events: none;
+	background:
+		radial-gradient(
+			130% 90% at 50% -15%,
+			#2fe0f0 0%,
+			#0f93b3 14%,
+			#066b8c 30%,
+			#044a66 50%,
+			#022c41 70%,
+			#011320 100%
+		);
+}
+
+/* Drifting god-rays of sunlight from the surface */
+.ocean-rays {
+	position: absolute;
+	inset: -20% -20% 0 -20%;
+	background: repeating-linear-gradient(
+		100deg,
+		rgba(180, 255, 255, 0) 0px,
+		rgba(180, 255, 255, 0) 60px,
+		rgba(190, 255, 255, 0.12) 90px,
+		rgba(190, 255, 255, 0.04) 120px,
+		rgba(180, 255, 255, 0) 150px
+	);
+	mix-blend-mode: screen;
+	filter: blur(6px);
+	transform-origin: top center;
+	animation: raysDrift 18s ease-in-out infinite alternate;
+}
+
+/* Slowly shifting caustic shimmer */
+.ocean-caustics {
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(
+			40% 30% at 30% 20%,
+			rgba(150, 255, 255, 0.18),
+			transparent 70%
+		),
+		radial-gradient(
+			35% 25% at 75% 35%,
+			rgba(120, 230, 255, 0.14),
+			transparent 70%
+		),
+		radial-gradient(
+			45% 35% at 55% 80%,
+			rgba(90, 200, 255, 0.1),
+			transparent 70%
+		);
+	mix-blend-mode: screen;
+	filter: blur(10px);
+	animation: causticShift 22s ease-in-out infinite alternate;
+}
+
+/* Depth vignette: darker edges, hint of surface glow at top */
+.ocean-vignette {
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(
+			120% 100% at 50% 0%,
+			rgba(120, 240, 255, 0.12),
+			transparent 45%
+		),
+		radial-gradient(
+			140% 120% at 50% 55%,
+			transparent 55%,
+			rgba(0, 8, 16, 0.75) 100%
+		);
+}
+
+@keyframes raysDrift {
+	0% {
+		transform: rotate(-3deg) translateX(-3%);
+		opacity: 0.7;
+	}
+	100% {
+		transform: rotate(3deg) translateX(3%);
+		opacity: 1;
+	}
+}
+
+@keyframes causticShift {
+	0% {
+		transform: translate(-2%, -1%) scale(1);
+	}
+	100% {
+		transform: translate(2%, 2%) scale(1.08);
+	}
 }
 
 .container {
@@ -162,16 +266,39 @@ canvas.sparticles {
 	}
 }
 
+@keyframes floatBob {
+	0%,
+	100% {
+		transform: translateY(0) rotate(-0.5deg);
+	}
+	50% {
+		transform: translateY(-12px) rotate(0.5deg);
+	}
+}
+
+/* Frosted-glass panels so the ocean shows through */
+.box,
+.navbar,
+.sidebar,
+.item-image,
+.modal-content {
+	background-color: color-mix(in srgb, var(--bg-accent) 68%, transparent);
+	backdrop-filter: blur(8px) saturate(130%);
+	-webkit-backdrop-filter: blur(8px) saturate(130%);
+	border-color: color-mix(in srgb, var(--border-color) 55%, rgba(180, 245, 255, 0.4));
+	box-shadow:
+		4px 4px 0 var(--shadow-color),
+		0 0 24px rgba(80, 220, 255, 0.15);
+}
+
 .navbar {
 	margin-bottom: 1.5rem;
-	background-color: var(--bg-accent);
 	animation: fadeInUp 0.5s ease-out;
 }
 
 .sidebar {
 	width: 100%;
 	padding: 0.5rem;
-	background-color: var(--bg-accent);
 	animation: slideIn 0.4s ease-out;
 }
 
@@ -179,32 +306,34 @@ canvas.sparticles {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	animation: fadeInUp 0.4s ease-out backwards;
+	animation:
+		fadeInUp 0.4s ease-out backwards,
+		floatBob 7s ease-in-out infinite;
 }
 
 .item:nth-child(1) {
-	animation-delay: 0.05s;
+	animation-delay: 0.05s, -0.2s;
 }
 .item:nth-child(2) {
-	animation-delay: 0.1s;
+	animation-delay: 0.1s, -1.6s;
 }
 .item:nth-child(3) {
-	animation-delay: 0.15s;
+	animation-delay: 0.15s, -3.1s;
 }
 .item:nth-child(4) {
-	animation-delay: 0.2s;
+	animation-delay: 0.2s, -4.4s;
 }
 .item:nth-child(5) {
-	animation-delay: 0.25s;
+	animation-delay: 0.25s, -2.2s;
 }
 .item:nth-child(6) {
-	animation-delay: 0.3s;
+	animation-delay: 0.3s, -5.5s;
 }
 .item:nth-child(7) {
-	animation-delay: 0.35s;
+	animation-delay: 0.35s, -0.9s;
 }
 .item:nth-child(8) {
-	animation-delay: 0.4s;
+	animation-delay: 0.4s, -3.8s;
 }
 
 .navbar .container {
@@ -336,7 +465,6 @@ canvas.sparticles {
 .sidebar {
 	width: 100%;
 	padding: 0.5rem;
-	background-color: var(--bg-accent);
 }
 
 @media (min-width: 768px) {
@@ -405,14 +533,16 @@ canvas.sparticles {
 }
 
 .item-image {
-	background-color: var(--bg-secondary);
+	background-color: color-mix(in srgb, var(--bg-secondary) 60%, transparent);
 	display: flex;
 	justify-content: center;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
 	border: 2px solid var(--border-color);
-	box-shadow: 4px 4px 0 var(--shadow-color);
+	box-shadow:
+		4px 4px 0 var(--shadow-color),
+		0 0 22px rgba(80, 220, 255, 0.18);
 	aspect-ratio: 1;
 	transition:
 		transform 0.2s ease,
