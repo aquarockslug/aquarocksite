@@ -95,6 +95,13 @@ export const games = [
 		tags: ["JS"],
 		description: "Deep undersea incremental deck building game",
 	},
+	{
+		name: "Angel Hexagons",
+		url: "games/angel-hexagons/index.html",
+		img: "games/angel-hexagons/screenshot.png",
+		tags: ["JS", "board", "puzzle"],
+		description: "Place fish to block the angel's escape",
+	},
 ];
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
 
