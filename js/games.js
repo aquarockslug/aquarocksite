@@ -107,7 +107,7 @@ export const games = [
 		url: "games/ground-clicker/index.html",
 		img: "games/ground-clicker/screenshot.png",
 		tags: ["JS", "incremental"],
-		description: "Place fish to block the angel's escape",
+		description: "Click to dig for gold",
 	},
 ];
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
