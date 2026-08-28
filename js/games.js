@@ -92,7 +92,7 @@ export const games = [
 		name: "Abyssal Cards",
 		url: "games/AbyssalCards/index.html",
 		img: "games/AbyssalCards/screenshot.png",
-		tags: ["JS"],
+		tags: ["JS", "incremental"],
 		description: "Deep undersea incremental deck building game",
 	},
 	{
@@ -100,6 +100,13 @@ export const games = [
 		url: "games/angel-hexagons/index.html",
 		img: "games/angel-hexagons/screenshot.png",
 		tags: ["JS", "board", "puzzle"],
+		description: "Place fish to block the angel's escape",
+	},
+	{
+		name: "Ground Clicker",
+		url: "games/ground-clicker/index.html",
+		img: "games/ground-clicker/screenshot.png",
+		tags: ["JS", "incremental"],
 		description: "Place fish to block the angel's escape",
 	},
 ];
