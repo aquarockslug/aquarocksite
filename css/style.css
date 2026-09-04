@@ -13,6 +13,7 @@
 	--btn-play: #40a02b;
 	--btn-close: #d20f39;
 	--btn-random: #7287fd;
+	--btn-about: #fe640b;
 }
 
 [data-theme="dark"] {
@@ -25,6 +26,7 @@
 	--btn-play: #2d5a27;
 	--btn-close: #8b1538;
 	--btn-random: #4a5fa8;
+	--btn-about: #a5581a;
 }
 
 [data-theme="sepia"] {
@@ -37,6 +39,7 @@
 	--btn-play: #6b8c3a;
 	--btn-close: #a32a4a;
 	--btn-random: #8a7a5a;
+	--btn-about: #b0662a;
 }
 
 [data-theme="monochrome"] {
@@ -49,11 +52,13 @@
 	--btn-play: #333;
 	--btn-close: #666;
 	--btn-random: #999;
+	--btn-about: #777;
 }
 
 [data-theme="monochrome"] .btn-play,
 [data-theme="monochrome"] .btn-close,
-[data-theme="monochrome"] .btn-random {
+[data-theme="monochrome"] .btn-random,
+[data-theme="monochrome"] .btn-about {
 	color: #fff;
 }
 
@@ -68,6 +73,7 @@
 	--btn-play: #cf87e8;
 	--btn-close: #ae81ff;
 	--btn-random: #cf87e8;
+	--btn-about: #ff8f40;
 }
 
 /* SWEETIE */
@@ -81,6 +87,7 @@
 	--btn-play: #b094e2;
 	--btn-close: #92d3c5;
 	--btn-random: #b094e2;
+	--btn-about: #e2a05a;
 }
 
 /* BLULOCO */
@@ -94,6 +101,7 @@
 	--btn-play: #3691ff;
 	--btn-close: #10b0fe;
 	--btn-random: #3691ff;
+	--btn-about: #53c7a0;
 }
 
 * {
@@ -437,6 +445,26 @@ html {
 	transition:
 		transform 0.15s ease,
 		box-shadow 0.15s ease;
+}
+
+.btn-about {
+	background-color: var(--btn-about);
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.btn-about:hover {
+	box-shadow: 6px 6px 0 var(--shadow-color);
+	transform: translate(-2px, -2px);
+}
+
+.btn-about:active {
+	transform: translate(2px, 2px);
+	box-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 .btn-random:hover {
