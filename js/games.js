@@ -109,6 +109,13 @@ export const games = [
 		tags: ["JS", "incremental"],
 		description: "Click to dig for gold",
 	},
+	{
+		name: "Horse Plinko",
+		url: "games/horse-plinko/index.html",
+		img: "games/horse-plinko/screenshot.png",
+		tags: ["JS"],
+		description: "Plinko but with horses",
+	},
 ];
 export const getRandomGame = () => games[Math.floor(Math.random() * games.length)];
 

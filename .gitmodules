@@ -22,3 +22,6 @@
 [submodule "games/AbyssalCards"]
 	path = games/AbyssalCards
 	url = git@github.com:aquarockslug/AbyssalCards.git
+[submodule "games/horse-plinko"]
+	path = games/horse-plinko
+	url = git@github.com:aquarockslug/horse-plinko.git
